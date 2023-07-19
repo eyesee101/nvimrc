@@ -9,6 +9,7 @@
 
 return {
   { "nvim-tree/nvim-web-devicons" },
+  { "eyesee101/onedark.nvim"}
   { "MunifTanjim/nui.nvim" },
   -- { "onsails/lspkind.nvim" },
   -- theme
@@ -45,7 +46,7 @@ return {
       vim.g.gruvbox_material_disable_italic_comment = 1
       -- }}}
 
-      vim.cmd.colorscheme "gruvbox-material"
+      vim.cmd.colorscheme "onedark"
       vim.o.foldtext = 'v:lua.require("lb.utils.fold").foldtext()'
     end,
     -- }}}
