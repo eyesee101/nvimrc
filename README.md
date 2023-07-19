@@ -43,16 +43,13 @@
 
 If you have [Docker](https://www.docker.com/) on your system you can try out this config via docker
 
-### Just start nvim
 
-```bash
-docker run -it --rm liubang/nvim
-```
 
 ### Mount a local directory and start nvim
 
 ```bash
-docker run -it --rm -v $(pwd):/home/neovim/workspace liubang/nvim
+docker build -t eyesee/nvim -f .\docker\Dpckerfile
+docker run -it --rm -v ${PWD}:/home/neovim/workspace eyesee/nvim:latest
 ```
 
 ## Keymaps
@@ -230,3 +227,17 @@ docker run -it --rm -v $(pwd):/home/neovim/workspace liubang/nvim
 - [yanky.nvim](https://github.com/gbprod/yanky.nvim)
 
 <!-- plugins:end -->
+
+## Build image
+
+to build first build the builder.
+
+``` bash
+docker build --build-arg NVIM_TAG=0.9.1 -t nvim:latest -f .\docker\build_neovim.Dockerfile .
+```
+
+then run the editor using
+
+``` bash
+
+```

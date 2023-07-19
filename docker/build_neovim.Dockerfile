@@ -1,13 +1,3 @@
-#======================================================================
-#
-# build_neovim.Dockerfile -
-#
-# Created by liubang on 2023/01/19 15:45
-# Last Modified: 2023/01/19 15:45
-#
-#======================================================================
-
-# syntax=docker/dockerfile:1
 # build neovim
 FROM --platform=$TARGETPLATFORM ubuntu:20.04
 

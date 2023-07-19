@@ -1,13 +1,5 @@
-#======================================================================
-#
-# Dockerfile -
-#
-# Created by liubang on 2023/01/18 17:16
-# Last Modified: 2023/01/18 17:16
-#
-#======================================================================
 
-FROM --platform=$TARGETPLATFORM liubang/neovim:latest AS builder
+FROM --platform=$TARGETPLATFORM nvim:latest AS builder
 FROM --platform=$TARGETPLATFORM ubuntu:latest
 
 ARG BUILDARCH
@@ -52,7 +44,7 @@ ENV PATH=/opt/app/nvim/bin:$PATH
 RUN mkdir -p $HOME/.config &&                                                        \
     mkdir -p $HOME/workspace &&                                                      \
     cd $HOME &&                                                                      \
-    git clone --depth 1  https://github.com/liubang/nvimrc.git $HOME/.config/nvim && \
+    git clone --depth 1  https://github.com/eyesee101/nvimrc.git $HOME/.config/nvim && \
     rm -rf $HOME/.config/nvim/.github &&                                             \
     rm -rf $HOME/.config/nvim/.git &&                                                \
     rm -rf $HOME/.config/nvim/static &&                                              \
