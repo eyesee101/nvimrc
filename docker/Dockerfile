@@ -2,8 +2,6 @@
 FROM --platform=$TARGETPLATFORM nvim:latest AS builder
 FROM --platform=$TARGETPLATFORM ubuntu:latest
 
-ARG BUILDARCH
-
 RUN apt update &&                          \
     apt install --no-install-recommends -y \
     curl                                   \
