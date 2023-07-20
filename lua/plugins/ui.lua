@@ -9,7 +9,7 @@
 
 return {
   { "nvim-tree/nvim-web-devicons" },
-  { "eyesee101/onedark.nvim"}
+  { "eyesee101/onedark.nvim"},
   { "MunifTanjim/nui.nvim" },
   -- { "onsails/lspkind.nvim" },
   -- theme
