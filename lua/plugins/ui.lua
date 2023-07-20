@@ -360,7 +360,8 @@ return {
       return {
         options = {
           icons_enabled = true,
-          theme = "gruvbox-material",
+          theme = "onedark",
+          -- theme = "gruvbox-material",
           component_separators = "",
           section_separators = "",
           always_divide_middle = true,
