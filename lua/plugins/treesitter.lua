@@ -26,7 +26,7 @@ return {
         "rust",
         "go",
         "gomod",
-        "java"
+        "java",
         "python",
         "latex",
         "lua",
