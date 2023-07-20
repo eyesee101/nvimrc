@@ -37,18 +37,23 @@ RUN groupdel users                                              \
 
 USER neovim
 ENV PYTHON3_HOST_PROG="/usr/bin/python3"
+
 ENV PATH=/opt/app/nvim/bin:$PATH
 
-RUN mkdir -p $HOME/.config &&                                                        \
-    mkdir -p $HOME/workspace &&                                                      \
-    cd $HOME &&                                                                      \
-    git clone --depth 1 https://github.com/eyesee101/nvimrc.git $HOME/.config/nvim && \
-    rm -rf $HOME/.config/nvim/.github &&                                             \
-    rm -rf $HOME/.config/nvim/.git &&                                                \
-    rm -rf $HOME/.config/nvim/static &&                                              \
-    rm -rf $HOME/.config/nvim/scratch &&                                             \
-    rm -rf $HOME/.config/nvim/docker &&                                              \
-    pip install --user pynvim &&                                                     \
+RUN curl https://raw.githubusercontent.com/eruizc-dev/jdtls-launcher/master/install.sh | bash
+
+ENV PATH=$PATH:$HOME/.local/bin
+
+RUN mkdir -p $HOME/.config &&                                                           \
+    mkdir -p $HOME/workspace &&                                                         \
+    cd $HOME &&                                                                         \
+    git clone --depth 1 https://github.com/eyesee101/nvimrc.git $HOME/.config/nvim &&   \
+    rm -rf $HOME/.config/nvim/.github &&                                                \
+    rm -rf $HOME/.config/nvim/.git &&                                                   \
+    rm -rf $HOME/.config/nvim/static &&                                                 \
+    rm -rf $HOME/.config/nvim/scratch &&                                                \
+    rm -rf $HOME/.config/nvim/docker &&                                                 \
+    pip install --user pynvim &&                                                        \
     nvim --headless +'Lazy! sync' +qa
 
 WORKDIR $HOME/workspace

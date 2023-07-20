@@ -323,6 +323,13 @@ lspconfig.lua_ls.setup(c.default {
 })
 -- }}}
 
+-- {{{ jdtls
+lspconfig.jdtls.setup(c.default {
+       cmd = { 'jdtls' },
+       root_dir = vim.fs.dirname(vim.fs.find({'pom.xml', 'gradle.build', '.git', 'mvnw'}, { upward = true })[1]),
+       on_attach = lsp_attach,
+    })
+-- }}}
 -- {{{ latex
 local forwardSearch = {}
 if not is_mac then

@@ -21,6 +21,8 @@ return {
   { "b0o/schemastore.nvim" },
   { "simrat39/rust-tools.nvim" },
   { "jose-elias-alvarez/typescript.nvim" },
+  { 'williamboman/nvim-lsp-installer' },
+  
   {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
@@ -43,6 +45,7 @@ return {
       require "plugins.lsp.autocmd"
     end,
   },
+  { 'mfussenegger/nvim-jdtls' },
   {
     "jose-elias-alvarez/null-ls.nvim",
     event = { "BufReadPre", "BufNewFile" },
