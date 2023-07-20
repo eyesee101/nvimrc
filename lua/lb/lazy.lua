@@ -26,7 +26,7 @@ require("lazy").setup {
   concurrency = 6,
   install = {
     missing = true,
-    colorscheme = { "onedark" },
+    colorscheme = { "gruvbox-material" },
   },
   dev = {
     path = "~/workspace/vim",
